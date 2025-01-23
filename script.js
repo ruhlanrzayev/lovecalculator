@@ -12,7 +12,6 @@ document.body.innerHTML =
     <link rel="stylesheet" href="css/responsive.css" />
     <link rel="stylesheet" href="css/font.css" />
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon" />
     <script src="script.js"></script>
 </head>
 <body>
