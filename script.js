@@ -54,7 +54,11 @@ const loveContainer = document.getElementById('love-container');
 
 function calculate() {
     if(name1.value === '' || name2.value === '') {
-        alert('Please fill in both names!');
+        Swal.fire({
+            icon: 'warning',
+            title: 'Oops...',
+            text: 'Please fill in both names!'
+        });
         return;
     } 
     else {
