@@ -1,6 +1,19 @@
 /* For Desktop version */
 @media only screen and (min-width: 768px)
 {
+
+    body {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+    }
+
+    #heart-container {
+        position: relative;
+        width: 100%;
+        height: 20vh;
+        overflow: hidden;
+    }
     .super-container{
         h1 {
             font: bold 3em 'Playwrite IN', sans-serif;
@@ -45,4 +58,41 @@
         }
         p { margin: 10px auto; font: normal .9em Helvetica, sans-serif; max-width: 400px; }
     }
+
+
+        .heart {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background-color: red;
+            transform: rotate(45deg);
+            animation: floatUp 5s linear infinite;
+        }
+
+        .heart::before,
+        .heart::after {
+            content: "";
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background-color: red;
+            border-radius: 50%;
+            top: -7.5px;
+            left: 0;
+        }
+
+        .heart::after {
+            left: 7.5px;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) rotate(45deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(45deg);
+                opacity: 0;
+            }
+        }
 }

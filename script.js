@@ -15,32 +15,34 @@ document.body.innerHTML =
     <script src="script.js"></script>
 </head>
 <body>
-    <div class="super-container">
+    <div id="heart-container"> 
+        <div class="super-container">
 
-        <h1>The Love Calculator</h1>
+            <h1>The Love Calculator</h1>
 
-        <p>The Love Calculator provides a score from 0% to 100% that is meant to be an indication of a match in terms of love, based on the names of two people. The higher the percentage, the better the match. Note: that like all other love calculators on the Internet, this calculator is intended for amusement only rather than as a real indication of love. Please follow your heart instead of the results of this calculator when considering love.</p>
+            <p>The Love Calculator provides a score from 0% to 100% that is meant to be an indication of a match in terms of love, based on the names of two people. The higher the percentage, the better the match. Note: that like all other love calculators on the Internet, this calculator is intended for amusement only rather than as a real indication of love. Please follow your heart instead of the results of this calculator when considering love.</p>
 
+        </div>
     </div> 
 
-    <div id=result-container> 
+        <div id=result-container> 
 
-        <div class="love-container" id="love-container">
+            <div class="love-container" id="love-container">
 
-        <h1>Find your love</h1> 
+            <h1>Find your love</h1> 
 
-        <div class="inputs" id="inputs">
-            <input type="text" id="yourName" placeholder="Your Name" />
-            <input type="text" id="partnerName" placeholder="Partner Name" />
-            <button onclick="calculate()">Calculate</button>
+            <div class="inputs" id="inputs">
+                <input type="text" id="yourName" placeholder="Your Name" />
+                <input type="text" id="partnerName" placeholder="Partner Name" />
+                <button onclick="calculate()">Calculate</button>
+            </div>
+            
+            </div>
+
+            <div class="result-display displayNone">
+            
+            </div>
         </div>
-        
-        </div>
-
-        <div class="result-display displayNone">
-        
-        </div>
-    </div>
 
 </body>
 </html>
@@ -51,6 +53,23 @@ const name1 = document.getElementById('yourName');
 const name2 = document.getElementById('partnerName');
 const result = document.getElementById('result-container');
 const loveContainer = document.getElementById('love-container');
+const container = document.getElementById("heart-container");
+
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+
+    container.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 5000);
+}
+
+setInterval(createHeart, 300);
 
 function calculate() {
     if(name1.value === '' || name2.value === '') {
