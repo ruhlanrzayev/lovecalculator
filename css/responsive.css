@@ -1,0 +1,48 @@
+/* For Desktop version */
+@media only screen and (min-width: 768px)
+{
+    .super-container{
+        h1 {
+            font: bold 3em 'Playwrite IN', sans-serif;
+        }
+        p {
+            max-width: 962px;
+            margin: 10px auto;
+            font: normal 1.2em Helvetica, sans-serif;
+        }
+    }
+
+    .love-container {
+        max-width: 600px;
+        height: 750px;
+        box-shadow: 0 0 10px violet;
+        h1 {
+            font: bold 2.5em 'Playwrite VN', sans-serif;
+        }
+        .inputs {
+            input {
+                width: 250px;
+                padding: 15px 25px;
+                transition: .3s ease-in-out;
+            }
+            input:focus {
+                width: 300px;
+                outline: none;
+                border: 1px solid transparent;
+                font: bold 1em Helvetica, sans-serif;
+            }
+            input:focus::placeholder {color: transparent;}
+        }
+    }
+
+    .result-display {
+        max-width: 600px;
+        height: 750px;
+        box-shadow: 0 0 10px violet;
+        transition: .5s ease-in-out;
+        h1 {
+            font: bold 2.5em 'Playwrite VN', sans-serif;
+        }
+        p { margin: 10px auto; font: normal .9em Helvetica, sans-serif; max-width: 400px; }
+    }
+}
